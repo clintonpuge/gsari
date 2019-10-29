@@ -1,0 +1,39 @@
+version: '3.1'
+volumes:
+  mongo_data:
+services:
+  gsari-api:
+    restart: unless-stopped
+    # image: api:latest
+    build: ./gsari-api
+    ports:
+      - 8080:8080
+    volumes:
+      - ./gsari-api:/user/src/gsari-api
+    links:
+      - mongo
+    command: npm start
+    tty: true
+    stdin_open: true
+
+  gsari-client:
+    restart: unless-stopped
+    # image: client:latest
+    build: ./gsari-client
+    ports:
+      - 3000:3000
+    volumes:
+      - ./gsari-client:/usr/src/gsari-client
+    links:
+      - gsari-api
+    command: npm start
+    tty: true
+    stdin_open: true
+
+  mongo:
+    restart: unless-stopped
+    image: mongo:3.6.4
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - 27017:27017

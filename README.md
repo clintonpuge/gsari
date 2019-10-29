@@ -1,3 +1,3 @@
-# gsari
-# gsari
-# gsari
+# Quick start
+
+`docker compose up --build`

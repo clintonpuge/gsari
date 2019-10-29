@@ -1,0 +1,7 @@
+{
+  "db": "mongodb://mongo:27017/saridb",
+  "jwtKey": "test123",
+  "refreshJwtKey": "devkeytest1234",
+  "tokenLife": 900,
+  "refreshTokenLife": 86400
+}

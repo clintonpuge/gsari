@@ -1,0 +1,24 @@
+gsari-api/node_modules
+gsari-client/node_modules
+
+
+# dependencies
+gsari-client/.pnp
+gsari-client/.pnp.js
+
+# testing
+gsari-client/coverage
+gsari-api/coverage
+# production
+gsari-client/build
+
+# misc
+gsari-client.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+gsari-client/npm-debug.log*
+gsari-client/yarn-debug.log*
+gsari-client/yarn-error.log*
