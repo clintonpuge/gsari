@@ -4,12 +4,11 @@ volumes:
 services:
   gsari-api:
     restart: unless-stopped
-    # image: api:latest
     build: ./gsari-api
     ports:
       - 8080:8080
-    volumes:
-      - ./gsari-api:/user/src/gsari-api
+    # volumes:
+      # - ./gsari-api:/user/src/gsari-api
     links:
       - mongo
     command: npm start
@@ -18,12 +17,11 @@ services:
 
   gsari-client:
     restart: unless-stopped
-    # image: client:latest
     build: ./gsari-client
     ports:
       - 3000:3000
-    volumes:
-      - ./gsari-client:/usr/src/gsari-client
+    # volumes:
+      # - ./gsari-client:/usr/src/gsari-client
     links:
       - gsari-api
     command: npm start
