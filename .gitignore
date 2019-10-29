@@ -13,7 +13,7 @@ gsari-api/coverage
 gsari-client/build
 
 # misc
-gsari-client.DS_Store
+gsari-client/.DS_Store
 .env.local
 .env.development.local
 .env.test.local
